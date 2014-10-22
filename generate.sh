@@ -10,7 +10,7 @@ DRUSH=`which drush`
 # Telechargement Drupal
 $DRUSH dl drupal-7 -q --drupal-project-rename=drupal7 --destination=/tmp
 # Detection de version
-VERSION=`$DRUSH status drupal-version --pipe -r /tmp/drupal7`
+VERSION=`$DRUSH status drupal-version --format=list -r /tmp/drupal7`
 # Recuperation + copie de la trad de la version
 wget http://ftp.drupal.org/files/translations/7.x/drupal/drupal-$VERSION.$LOCALE.po --output-document=/tmp/drupal-$VERSION.$LOCALE.po --quiet
 cp /tmp/drupal-$VERSION.$LOCALE.po /tmp/drupal7/profiles/minimal/translations/
@@ -28,7 +28,7 @@ rm -r /tmp/drupal-$VERSION
 # Telechargement Drupal
 $DRUSH dl drupal-6 -q --drupal-project-rename=drupal6 --destination=/tmp
 # Detection de version
-VERSION=`$DRUSH status drupal-version --pipe -r /tmp/drupal6`
+VERSION=`$DRUSH status drupal-version --format=list -r /tmp/drupal6`
 # Recuperation + copie de la trad de la version
 wget http://ftp.drupal.org/files/translations/6.x/drupal/drupal-$VERSION.$LOCALE.po --output-document=/tmp/drupal-$VERSION.$LOCALE.po --quiet
 mkdir /tmp/drupal6/profiles/default/translations
