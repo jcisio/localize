@@ -1,8 +1,8 @@
-#!/bin/sh
-# Dossier de travail
-DIR=.
-LOCALE=vi
-DRUSH=`which drush`
+#!/usr/bin/env bash
+
+# Load default settings and overrides.
+source ./example.settings.sh
+[[ -f ./settings.sh ]] && source ./settings.sh
 
 #############
 # Version 7
